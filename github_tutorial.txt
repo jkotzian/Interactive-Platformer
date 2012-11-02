@@ -1,5 +1,4 @@
-1) refresh / sync
-this will grab the latest version of the repository
+1) grab the latest version of the repository
 
 in the github desktop client at the top of desktop client
 	use refresh and sync buttons
@@ -16,7 +15,7 @@ right click on repository --> open in explorer
 make your changes, add, and delete files or sub folders in this folder 
 (the github desktop client is not a file explorer, only file source control)
 
-3) commit
+3) commit changes locally
 this saves your files locally
 
 
@@ -25,4 +24,18 @@ fill out commit message (required)
 
 OR
 
-open a shell and type: git
+open a shell 
+
+if any files/folders have been added/deleted
+type: git add *		the '*' add's all files
+
+type: git commit -m "my commit message"
+
+4) push changes to the server
+
+click sync
+
+OR
+
+open a shell
+type: git push
