@@ -1,0 +1,121 @@
+if vspeed > 15 			// Cap the players vertical speed 
+	vspeed=15
+
+if place_free(x,y+5) 	// Determines wether or not the player is in the air
+	inair=true
+else
+	inair=false
+
+if inair=true{ 			// Sets gravity if the player is in the air
+	gravity=grav
+	gravity_direction=270
+}
+
+// check left/right while in air
+if keyboard_check_pressed(ctrlJump) and inair=true and !place_free(x-pspeed-15,y-2){
+	vticker=jumpspeed
+	vspeed=jumpspeed
+	gravity=gravity
+	cantleft=true
+	alarm[3]=5
+	cl=0
+}
+
+if keyboard_check_pressed(ctrlJump) and inair=true and !place_free(x+pspeed+15,y-2){
+	vticker=jumpspeed
+	vspeed=jumpspeed
+	gravity=gravity
+	cantright=true
+	alarm[2]=5
+	cr=0
+}
+
+if keyboard_check_pressed(ctrlJump) and inair=true and !place_free(x-pspeed,y-2){
+	vticker=jumpspeed
+	vspeed=jumpspeed
+	gravity=gravity
+	cantleft=true
+	alarm[3]=5
+	cl=0
+}
+
+if keyboard_check_pressed(ctrlJump) and inair=true and !place_free(x+pspeed,y-2){
+	vticker=jumpspeed
+	vspeed=jumpspeed
+	gravity=gravity
+	cantright=true
+	alarm[2]=5
+	cr=0
+}
+
+if cantleft=true and place_free(x+pspeed,y-2)
+	x += pspeed-cl
+
+if cantright=true and place_free(x-pspeed,y-2)
+	x -= pspeed+cr
+
+if cantleft=true
+	cl += .1
+
+if cantright=true
+	cr += .1
+
+if keyboard_check(ctrlJump) and inair=false and inair=false{	//keyboard_check(ord('W'))
+	inair=true
+	vticker=jumpspeed
+	vspeed=jumpspeed
+	gravity=grav
+}
+
+if keyboard_check(ctrlJump){ //keyboard_check(ord('W'))
+	if vspeed >= jumpcap
+		vticker=0
+	else
+		vspeed=vticker
+}
+
+if vticker < 0 and vspeed < 0
+	vticker += fallspeed
+
+if keyboard_check(ctrlRight) and cantright=false{	//keyboard_check(ord('D'))
+	dir=1
+	if place_free(x+pspeed,y-2)
+		x += (pspeed-pspeedjr)
+}
+
+if keyboard_check(ctrlLeft) and cantleft=false{		//keyboard_check(ord('A'))
+	dir=-1
+	if place_free(x-pspeed,y-2)
+		x -= (pspeed-pspeedjl)
+}
+
+if vspeed <= -1 and !place_free(x,y+vspeed){
+	move_contact_solid(90,5)
+	vspeed=0
+	vticker=0
+}
+
+if vspeed <= -1 
+if place_meeting(x,y+vspeed,oDoor) or place_meeting(x,y+vspeed,oDoorMain10){
+	l=instance_nearest(x,y,oDoorMain10)
+	if l.dkills>0	{
+		move_contact_solid(90,5)
+		vspeed=0
+		vticker=0
+	}
+}
+
+if vspeed >= 0 and !place_free(x,y+vspeed){
+	move_contact_solid(270,10)
+	vspeed=0
+	gravity=0
+	cantick=true
+	inair=false
+	vticker=0
+}
+
+if pspeedjr > 0
+	pspeedjr -= .2
+
+if pspeedjl > 0
+	pspeedjl -= .2
