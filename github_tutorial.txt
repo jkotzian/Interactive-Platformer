@@ -1,0 +1,19 @@
+1) refresh / sync
+
+top of desktop client
+	use buttons
+
+right click on repository --> open a shell here
+type: git pull
+
+this will grab the latest version of the repository
+
+2) edit / make changes
+
+right click on repository --> open in explorer
+
+make your changes, add, and delete files or sub folders in this folder 
+(the github desktop client is not a file explorer, only file source control)
+
+3) commit
+
