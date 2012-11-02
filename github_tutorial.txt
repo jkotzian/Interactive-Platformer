@@ -26,9 +26,7 @@ OR
 
 open a shell 
 
-if any files/folders have been added/deleted
 type: git add *		the '*' add's all files
-
 type: git commit -m "my commit message"
 
 4) push changes to the server
