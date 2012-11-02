@@ -1,12 +1,13 @@
 1) refresh / sync
+this will grab the latest version of the repository
 
-top of desktop client
-	use buttons
+in the github desktop client at the top of desktop client
+	use refresh and sync buttons
 
+OR
+	
 right click on repository --> open a shell here
 type: git pull
-
-this will grab the latest version of the repository
 
 2) edit / make changes
 
@@ -16,4 +17,12 @@ make your changes, add, and delete files or sub folders in this folder
 (the github desktop client is not a file explorer, only file source control)
 
 3) commit
+this saves your files locally
 
+
+double click repository
+fill out commit message (required)
+
+OR
+
+open a shell and type: git
