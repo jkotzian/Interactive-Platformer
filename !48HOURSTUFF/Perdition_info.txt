@@ -1,0 +1,28 @@
+Title: Perdition
+Team: James Kotzian, Julia Sokolow, Helen Lai
+
+Description:
+You are a nature photographer that happened to fall down a pit
+leading to the underworld while snapping photos of a cavern. 
+Escape all manner of disfigured creatures and search for a 
+way back!
+
+Theme Compliance:
+The game takes place in the underworld, a place where some 
+people consider the ending destination for humans. However, 
+someone living is direly out of place, and the denizens will 
+want to deal with that! The Grims, the ghostly monsters with 
+claws, will try to snuff you, but their boss is the one you 
+really have to worry about... He is in the background, moving 
+ever forward, serving as a constant reminder that the end is 
+nearing.
+
+File(s):
+48Hour_Perdition.exe
+
+Credits:
+music(scoutzero, Bezo, DrWhat, and The-MickMad from Newgrounds)
+sound effects(soundjay, sounddogs)
+gamemaker developer environment & libraries
+
+Screenshots:
